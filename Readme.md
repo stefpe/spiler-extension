@@ -25,3 +25,7 @@
 ## Requirements
 - Mac OSX or Linux | Windows support is added but isnt tested
 - PHP >= 7.0 | Tested with PHP 7.0, 7.1, 7.2
+
+## Todos
+    - fix segfault for sending data to the tcp daemon
+    - fix keys for array result
