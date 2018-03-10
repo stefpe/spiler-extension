@@ -1,1 +1,15 @@
 .idea
+ac*
+.deps
+build
+include
+modules
+autom4te.cache
+Makefile*
+config*
+missing
+libtool
+mkinstalldirs
+install*
+ltmain.sh
+run-tests.php
