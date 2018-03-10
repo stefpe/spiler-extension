@@ -13,3 +13,7 @@ mkinstalldirs
 install*
 ltmain.sh
 run-tests.php
+.libs
+php_spiler.lo
+spiler.la
+spiler_profiler.lo
