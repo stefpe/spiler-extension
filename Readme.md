@@ -25,17 +25,22 @@
 ## Profiled data
 ### Global data
     sn: sapi(server api) name
-    st: start profiler time
-    et: end profiler time
-    ct: cpu time
-    ci: count of profiled function calls
+    st: start profiler time -> microseconds
+    et: end profiler time -> microseconds
+    ct: cpu time -> microseconds
+    ci: count of profiled function calls -> int
     fn: filename where the profiler started
     cs: the call stack
-
+### Call stack
+    fc: called function name
+    mu: memory usage -> bytes
+    pmu: peak memory usage -> bytes
+    st: start time -> microseconds
+    et: end time -> microseconds
+    cl: call level -> int
 ## Requirements
 - Mac OSX or Linux | Windows support is added but isnt tested
 - PHP >= 7.0 | Tested with PHP 7.0, 7.1, 7.2
 
 ## Todos
     - fix segfault for sending data to the tcp daemon
-    - fix keys for array result
