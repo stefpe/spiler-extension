@@ -337,27 +337,27 @@ void get_profiler_result_array(zval *result){
         array_init(&prof_result);//dynamic size, because real size is depending from conditions below
         //add_ doesnt copy the values, so keep them allocated
         if(prof_item->function_name != NULL)
-            add_assoc_string(&prof_result, "function_name", prof_item->function_name);
-        add_assoc_long(&prof_result, "memory_usage", prof_item->mem_usage);
-        add_assoc_long(&prof_result, "peak_memory_usage", prof_item->peak_mem_usage);
-        add_assoc_double(&prof_result, "start_time", prof_item->wall_start_time);
-        add_assoc_double(&prof_result, "stop_time", prof_item->wall_stop_time);
-        add_assoc_long(&prof_result, "call_level", prof_item->call_level);
+            add_assoc_string(&prof_result, "fc", prof_item->function_name);
+        add_assoc_long(&prof_result, "mu", prof_item->mem_usage);
+        add_assoc_long(&prof_result, "pmu", prof_item->peak_mem_usage);
+        add_assoc_double(&prof_result, "st", prof_item->wall_start_time);
+        add_assoc_double(&prof_result, "et", prof_item->wall_stop_time);
+        add_assoc_long(&prof_result, "cl", prof_item->call_level);
         if(prof_item->parent_prof_item != NULL)
-            add_assoc_long(&prof_result, "parent_index", prof_item->parent_prof_item->list_index);
+            add_assoc_long(&prof_result, "pi", prof_item->parent_prof_item->list_index);
 
         //add subarray to result
         add_next_index_zval(&items, &prof_result);
     }
-    add_assoc_string(result, "type", sapi_name);
+    add_assoc_string(result, "sn", sapi_name);
     efree(sapi_name);
-    add_assoc_double(result, "start_time", SPILER_G(prof_start_time));
-    add_assoc_double(result, "stop_time", SPILER_G(prof_stop_time));
-    add_assoc_double(result, "cpu_time", SPILER_G(cpu_time));
-    add_assoc_long(result, "cnt_stack_items", SPILER_G(cnt_prof_items));
+    add_assoc_double(result, "st", SPILER_G(prof_start_time));
+    add_assoc_double(result, "et", SPILER_G(prof_stop_time));
+    add_assoc_double(result, "ct", SPILER_G(cpu_time));
+    add_assoc_long(result, "ci", SPILER_G(cnt_prof_items));
     if(SPILER_G(start_filename) != NULL)
-        add_assoc_string(result, "filename", SPILER_G(start_filename));
-    add_assoc_zval(result, "call_stack", &items);
+        add_assoc_string(result, "fn", SPILER_G(start_filename));
+    add_assoc_zval(result, "cs", &items);
 }
 
 /*

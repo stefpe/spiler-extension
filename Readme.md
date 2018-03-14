@@ -22,6 +22,16 @@
     spiler_stop();
     spiler_fire_result("localhost", 9001);
 
+## Profiled data
+### Global data
+    sn: sapi(server api) name
+    st: start profiler time
+    et: end profiler time
+    ct: cpu time
+    ci: count of profiled function calls
+    fn: filename where the profiler started
+    cs: the call stack
+
 ## Requirements
 - Mac OSX or Linux | Windows support is added but isnt tested
 - PHP >= 7.0 | Tested with PHP 7.0, 7.1, 7.2
