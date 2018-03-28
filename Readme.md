@@ -6,6 +6,9 @@
     make
     sudo make install
 
+## Run test
+    make test
+
 ## Load in php.ini
     extension=spiler.so
 
@@ -44,3 +47,4 @@
 
 ## Todos
     - fix segfault for sending data to the tcp daemon
+    - change datatype from double to long int for time measuring values
